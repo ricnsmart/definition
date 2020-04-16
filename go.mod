@@ -1,3 +1,3 @@
-module github.com/ricnsmart/defination
+module github.com/ricnsmart/definition
 
 go 1.14
