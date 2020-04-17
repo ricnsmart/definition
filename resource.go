@@ -1,7 +1,7 @@
 package definition
 
 type (
-	Resource struct {
+	Resources struct {
 		Mongodb  mongodb
 		RabbitMQ rabbitMQ
 		Redis    redis
