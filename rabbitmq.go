@@ -4,15 +4,16 @@ import "time"
 
 const (
 	/*RabbitMQ Queue*/
-	ComponentInfoQueue           = "gateway/component/info"     // 设备网关组件信息
-	DeviceStatusQueue            = "device/status"              // 设备状态
-	DeviceLineStatusQueue        = "device/line/status"         // 线路状态
-	DeviceMetricsDataQueue       = "device/metrics/data"        // 设备（网关）各项指标数据
-	DeviceLineMetricsDataQueue   = "device/line/metrics/data"   // 设备（网关）线路各项指标数据
-	DeviceMetricsActionQueue     = "device/metrics/action"      // 设备指标动作：读，写，遥控
-	DeviceSettingDataQueue       = "device/setting/data"        // 设备基础配置
-	DeviceAlarmSettingQueue      = "device/alarm/setting"       // 设备警报配置
-	DeviceAlarmNotificationQueue = "device/alarm/notifications" // 设备警报通知
+	ComponentInfoQueue               = "gateway/component/info"         // 设备网关组件信息
+	DeviceStatusQueue                = "device/status"                  // 设备状态
+	LineStatusQueue                  = "line/status"                    // 线路状态
+	DeviceMetricsDataQueue           = "device/metrics/data"            // 设备（网关）各项指标数据
+	LineMetricsDataQueue             = "line/metrics/data"              // 线路各项指标数据
+	DeviceMetricsActionQueue         = "device/metrics/action"          // 设备指标动作：读，写，遥控
+	DeviceMetricsActionResponseQueue = "device/metrics/action/response" // 设备指标动作结果响应
+	DeviceSettingDataQueue           = "device/setting/data"            // 设备基础配置
+	DeviceAlarmSettingQueue          = "device/alarm/setting"           // 设备警报配置
+	DeviceAlarmNotificationQueue     = "device/alarm/notifications"     // 设备警报通知
 )
 
 type (
