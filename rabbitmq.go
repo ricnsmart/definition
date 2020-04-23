@@ -51,4 +51,17 @@ type (
 		Version   string    `bson:"Version"`
 		BuildTime string    `bson:"BuildTime"`
 	}
+
+	// 警报详细信息
+	AlarmInfo struct {
+		SN         string
+		LineNo     uint16
+		Metric     string
+		AlarmType  int
+		DeviceType string
+		Current    float32
+		SetValue   float32
+	}
+
+	Alarms []*AlarmInfo
 )
