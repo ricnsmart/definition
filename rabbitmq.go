@@ -53,7 +53,7 @@ type (
 	}
 
 	// 警报详细信息
-	AlarmInfo struct {
+	Alarm struct {
 		SN         string
 		LineNo     uint16
 		Metric     string
@@ -63,5 +63,5 @@ type (
 		SetValue   float32
 	}
 
-	Alarms []*AlarmInfo
+	Alarms []*Alarm
 )
