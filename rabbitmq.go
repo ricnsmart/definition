@@ -6,14 +6,16 @@ const (
 	/*RabbitMQ Queue*/
 	ComponentInfoQueue               = "gateway/component/info"         // 设备网关组件信息
 	DeviceStatusQueue                = "device/status"                  // 设备状态
-	LineStatusQueue                  = "line/status"                    // 线路状态
 	DeviceMetricsDataQueue           = "device/metrics/data"            // 设备（网关）各项指标数据
-	LineMetricsDataQueue             = "line/metrics/data"              // 线路各项指标数据
 	DeviceMetricsActionQueue         = "device/metrics/action"          // 设备指标动作：读，写，遥控
 	DeviceMetricsActionResponseQueue = "device/metrics/action/response" // 设备指标动作结果响应
 	DeviceSettingDataQueue           = "device/setting/data"            // 设备基础配置
 	DeviceAlarmSettingQueue          = "device/alarm/setting"           // 设备警报配置
 	DeviceAlarmNotificationQueue     = "device/alarm/notifications"     // 设备警报通知
+
+	LineStatusQueue      = "line/status"       // 线路状态
+	LineMetricsDataQueue = "line/metrics/data" // 线路各项指标数据
+	LineResetQueue       = "line/reset"        // 线路重置通知
 )
 
 type (
@@ -35,12 +37,11 @@ type (
 
 	// 设备/线路状态
 	DeviceStatus struct {
-		SN         string    `bson:"SN"`
-		DeviceType string    `bson:"DeviceType"`
-		Status     int       `bson:"Status"`
-		Host       string    `bson:"Host"`
-		CreateAt   time.Time `bson:"CreateAt"`
-		LineNo     uint8     `json:"LineNo,string" bson:"LineNo"`
+		SN       string    `bson:"SN"`
+		Status   int       `bson:"Status"`
+		Host     string    `bson:"Host"`
+		CreateAt time.Time `bson:"CreateAt"`
+		LineNo   uint8     `json:"LineNo,string" bson:"LineNo"`
 	}
 
 	// 组件信息
