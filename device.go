@@ -7,5 +7,5 @@ const (
 	ONLINE  = 1 // 在线
 	WARN    = 2 // 预警
 	ALERT   = 3 // 报警
-
+	Fault   = 4 // 故障
 )
