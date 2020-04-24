@@ -39,7 +39,7 @@ type (
 		Status   int       `bson:"Status"`
 		Host     string    `bson:"Host"`
 		CreateAt time.Time `bson:"CreateAt"`
-		LineNo   uint8     `bson:"LineNo" json:"LineNo,string"`
+		LineNo   uint8     `json:"LineNo,string" bson:"LineNo"`
 	}
 
 	// 组件信息
