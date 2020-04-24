@@ -35,11 +35,12 @@ type (
 
 	// 设备/线路状态
 	DeviceStatus struct {
-		SN       string    `bson:"SN"`
-		Status   int       `bson:"Status"`
-		Host     string    `bson:"Host"`
-		CreateAt time.Time `bson:"CreateAt"`
-		LineNo   uint8     `json:"LineNo,string" bson:"LineNo"`
+		SN         string    `bson:"SN"`
+		DeviceType string    `bson:"DeviceType"`
+		Status     int       `bson:"Status"`
+		Host       string    `bson:"Host"`
+		CreateAt   time.Time `bson:"CreateAt"`
+		LineNo     uint8     `json:"LineNo,string" bson:"LineNo"`
 	}
 
 	// 组件信息
