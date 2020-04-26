@@ -52,6 +52,7 @@ type (
 		Port      string    `bson:"Port"`
 		Version   string    `bson:"Version"`
 		BuildTime string    `bson:"BuildTime"`
+		Debug     bool      `bson:"Debug"`
 	}
 
 	// 警报详细信息
