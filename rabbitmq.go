@@ -37,26 +37,26 @@ type (
 
 	// 设备/线路状态
 	DeviceStatus struct {
-		SN       string    `bson:"SN"`
-		Status   int       `bson:"Status"`
-		Host     string    `bson:"Host"`
-		CreateAt time.Time `bson:"CreateAt"`
-		LineNo   uint8     `json:"LineNo,string" bson:"LineNo"`
+		Timestamp time.Time `bson:"Timestamp"`
+		SN        string    `bson:"SN"`
+		Status    int       `bson:"Status"`
+		Host      string    `bson:"Host"`
+		LineNo    uint8     `json:"LineNo,string" bson:"LineNo"`
 	}
 
 	// 组件信息
 	Component struct {
-		CreateAt  time.Time `bson:"CreateAt"`
+		Timestamp time.Time `bson:"Timestamp"`
 		Name      string    `bson:"Name"`
 		Host      string    `bson:"Host"`
 		Port      string    `bson:"Port"`
 		Version   string    `bson:"Version"`
 		BuildTime string    `bson:"BuildTime"`
-		Debug     bool      `bson:"Debug"`
 	}
 
 	// 警报详细信息
 	Alarm struct {
+		Timestamp  time.Time `bson:"Timestamp"`
 		SN         string
 		LineNo     uint16
 		Metric     string
