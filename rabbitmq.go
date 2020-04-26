@@ -4,18 +4,17 @@ import "time"
 
 const (
 	/*RabbitMQ Queue*/
-	ComponentInfoQueue               = "gateway/component/info"         // 设备网关组件信息
-	DeviceStatusQueue                = "device/status"                  // 设备状态
-	DeviceMetricsDataQueue           = "device/metrics/data"            // 设备（网关）各项指标数据
-	DeviceMetricsActionQueue         = "device/metrics/action"          // 设备指标动作：读，写，遥控
-	DeviceMetricsActionResponseQueue = "device/metrics/action/response" // 设备指标动作结果响应
-	DeviceSettingDataQueue           = "device/setting/data"            // 设备基础配置
-	DeviceAlarmSettingQueue          = "device/alarm/setting"           // 设备警报配置
-	DeviceAlarmNotificationQueue     = "device/alarm/notifications"     // 设备警报通知
-
-	LineStatusQueue      = "line/status"       // 线路状态
-	LineMetricsDataQueue = "line/metrics/data" // 线路各项指标数据
-	LineResetQueue       = "line/reset"        // 线路重置通知
+	ComponentInfoQueue               = "component.info"                 // 设备网关组件信息
+	DeviceStatusQueue                = "device.status"                  // 设备状态
+	DeviceMetricsDataQueue           = "device.metrics.data"            // 设备（网关）各项指标数据
+	DeviceMetricsActionQueue         = "device.metrics.action"          // 设备指标动作：读，写，遥控
+	DeviceMetricsActionResponseQueue = "device.metrics.action.response" // 设备指标动作结果响应
+	DeviceSettingDataQueue           = "device.setting.data"            // 设备基础配置
+	DeviceAlarmSettingQueue          = "device.alarm.setting"           // 设备警报配置
+	DeviceAlarmNotificationQueue     = "device.alarm.notifications"     // 设备警报通知
+	LineStatusQueue                  = "line.status"                    // 线路状态
+	LineMetricsDataQueue             = "line.metrics.data"              // 线路各项指标数据
+	LineResetQueue                   = "line.reset"                     // 线路重置通知
 )
 
 type (
@@ -49,7 +48,6 @@ type (
 		Timestamp time.Time `bson:"Timestamp"`
 		Name      string    `bson:"Name"`
 		Host      string    `bson:"Host"`
-		Port      string    `bson:"Port"`
 		Version   string    `bson:"Version"`
 		BuildTime string    `bson:"BuildTime"`
 	}
