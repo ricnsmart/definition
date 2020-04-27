@@ -41,7 +41,7 @@ type (
 		SN        string    `bson:"SN"`
 		Status    int       `bson:"Status"`
 		Host      string    `bson:"Host"`
-		LineNo    uint8     `json:"LineNo,string" bson:"LineNo"`
+		LineNo    int       `json:"LineNo,string" bson:"LineNo"`
 	}
 
 	// 组件信息
@@ -57,14 +57,12 @@ type (
 	// 警报详细信息
 	Alarm struct {
 		Timestamp  time.Time `bson:"Timestamp"`
-		SN         string
-		LineNo     uint16
-		Metric     string
-		AlarmType  int
-		DeviceType string
-		Current    float32
-		SetValue   float32
+		SN         string    `bson:"SN"`
+		LineNo     int       `json:"LineNo,string" bson:"LineNo"`
+		Metric     string    `bson:"Metric"`
+		AlarmType  int       `bson:"AlarmType"`
+		DeviceType string    `bson:"DeviceType"`
+		Current    float64   `bson:"Current"`
+		SetValue   float64   `bson:"SetValue"`
 	}
-
-	Alarms []*Alarm
 )
