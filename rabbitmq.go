@@ -35,8 +35,16 @@ type (
 		Data    string
 	}
 
-	// 设备/线路状态
+	// 设备状态
 	DeviceStatus struct {
+		Timestamp time.Time `bson:"Timestamp"`
+		SN        string    `bson:"SN"`
+		Status    int       `bson:"Status"`
+		Host      string    `bson:"Host"`
+	}
+
+	// 线路状态
+	LineStatus struct {
 		Timestamp time.Time `bson:"Timestamp"`
 		SN        string    `bson:"SN"`
 		Status    int       `bson:"Status"`
