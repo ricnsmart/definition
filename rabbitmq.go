@@ -15,6 +15,7 @@ const (
 	LineStatusQueue                  = "line.status"                    // 线路状态
 	LineMetricsDataQueue             = "line.metrics.data"              // 线路各项指标数据
 	LineResetQueue                   = "line.reset"                     // 线路重置通知
+	LineLeakageQueue                 = "line.leakage"                   // 线路漏电功能检测
 )
 
 type (
