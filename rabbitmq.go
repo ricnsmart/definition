@@ -15,6 +15,7 @@ const (
 	LineStatusQueue                  = "line.status"                    // 线路状态
 	LineMetricsDataQueue             = "line.metrics.data"              // 线路各项指标数据
 	LineResetQueue                   = "line.reset"                     // 线路重置通知
+	LineLeakageQueue                 = "line.leakage"                   // 线路漏电功能检测
 )
 
 type (
@@ -34,8 +35,16 @@ type (
 		Data    string
 	}
 
-	// 设备/线路状态
+	// 设备状态
 	DeviceStatus struct {
+		Timestamp time.Time `bson:"Timestamp"`
+		SN        string    `bson:"SN"`
+		Status    int       `bson:"Status"`
+		Host      string    `bson:"Host"`
+	}
+
+	// 线路状态
+	LineStatus struct {
 		Timestamp time.Time `bson:"Timestamp"`
 		SN        string    `bson:"SN"`
 		Status    int       `bson:"Status"`
