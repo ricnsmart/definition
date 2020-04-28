@@ -52,8 +52,19 @@ type (
 		BuildTime string    `bson:"BuildTime"`
 	}
 
-	// 警报详细信息
-	Alarm struct {
+	// 设备警报详细信息
+	DeviceAlarm struct {
+		Timestamp  time.Time `bson:"Timestamp"`
+		SN         string    `bson:"SN"`
+		Metric     string    `bson:"Metric"`
+		AlarmType  int       `bson:"AlarmType"`
+		DeviceType string    `bson:"DeviceType"`
+		Current    float64   `bson:"Current"`
+		SetValue   float64   `bson:"SetValue"`
+	}
+
+	// 线路警报详细信息
+	LineAlarm struct {
 		Timestamp  time.Time `bson:"Timestamp"`
 		SN         string    `bson:"SN"`
 		LineNo     int       `json:"LineNo,string" bson:"LineNo"`
