@@ -53,9 +53,11 @@ type (
 	}
 
 	// 组件信息
+	// 为了防止port设置失误，导致端口冲突等问题，还是显式申明port
 	Component struct {
 		Timestamp time.Time `bson:"Timestamp"`
 		Name      string    `bson:"Name"`
+		Port      string    `bson:"Port"`
 		Host      string    `bson:"Host"`
 		Version   string    `bson:"Version"`
 		BuildTime string    `bson:"BuildTime"`
