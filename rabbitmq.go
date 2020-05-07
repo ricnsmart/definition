@@ -56,7 +56,7 @@ type (
 	Component struct {
 		Timestamp time.Time `bson:"Timestamp"`
 		Name      string    `bson:"Name"`
-		Port      string    `bson:"Port"`
+		Port      int       `bson:"Port"`
 		Host      string    `bson:"Host"`
 		Version   string    `bson:"Version"`
 		BuildTime string    `bson:"BuildTime"`
