@@ -47,7 +47,6 @@ type (
 		Timestamp time.Time `bson:"Timestamp"`
 		SN        string    `bson:"SN"`
 		Status    int       `bson:"Status"`
-		Host      string    `bson:"Host"`
 		LineNo    int       `json:"LineNo,string" bson:"LineNo"`
 	}
 

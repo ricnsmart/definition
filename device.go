@@ -10,6 +10,12 @@ const (
 	Fault   = 4 // 故障
 )
 
+// 用于设备迁移
+type Migration struct {
+	IP   string
+	Port int
+}
+
 func DeviceStatusToString(status int) (result string) {
 	switch status {
 	case OFFLINE:
