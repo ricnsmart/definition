@@ -12,8 +12,9 @@ const (
 
 // 用于设备迁移
 type Migration struct {
-	IP   string
-	Port int
+	IP      string
+	Port    int
+	Pattern string // 正则模式
 }
 
 func DeviceStatusToString(status int) (result string) {
