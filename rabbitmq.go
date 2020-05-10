@@ -61,7 +61,7 @@ type (
 		Timestamp time.Time `bson:"Timestamp"`
 		SN        string    `bson:"SN"`
 		Status    int       `bson:"Status"`
-		LineNo    int       `json:"LineNo,string" bson:"LineNo"`
+		LineNo    int       `json:"LineNo" bson:"LineNo"`
 	}
 
 	// 组件信息
