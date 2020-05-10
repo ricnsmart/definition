@@ -15,7 +15,7 @@ const (
 	LineStatusQueue                  = "line.status"                    // 线路状态
 	LineMetricsDataQueue             = "line.metrics.data"              // 线路各项指标数据
 	LineResetQueue                   = "line.reset"                     // 线路重置通知
-	LineOfflineQueue                 = "line.offline"                   // 网关离线通知
+	GatewayOfflineQueue              = "gateway.offline"                // 网关离线通知
 
 	PushComponentInfoFailed               = "推送设备组件信息失败"
 	PushDeviceStatusFailed                = "推送设备状态失败"
@@ -28,7 +28,7 @@ const (
 	PushLineStatusFailed                  = "推送线路状态失败"
 	PushLineMetricsDataFailed             = "推送线路指标数据失败"
 	PushLineResetFailed                   = "推送线路重置通知失败"
-	PushLineOfflineFailed                 = "推送网关离线通知失败"
+	PushGatewayOfflineFailed              = "推送网关离线通知失败"
 )
 
 type (
