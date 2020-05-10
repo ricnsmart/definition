@@ -14,8 +14,6 @@ const (
 	DeviceAlarmNotificationQueue     = "device.alarm.notifications"     // 设备、线路警报通知
 	LineStatusQueue                  = "line.status"                    // 线路状态
 	LineMetricsDataQueue             = "line.metrics.data"              // 线路各项指标数据
-	LineResetQueue                   = "line.reset"                     // 线路重置通知
-	GatewayOfflineQueue              = "gateway.offline"                // 网关离线通知
 
 	PushComponentInfoFailed               = "推送设备组件信息失败"
 	PushDeviceStatusFailed                = "推送设备状态失败"
@@ -27,8 +25,6 @@ const (
 	PushDeviceAlarmNotificationFailed     = "推送警报通知失败"
 	PushLineStatusFailed                  = "推送线路状态失败"
 	PushLineMetricsDataFailed             = "推送线路指标数据失败"
-	PushLineResetFailed                   = "推送线路重置通知失败"
-	PushGatewayOfflineFailed              = "推送网关离线通知失败"
 )
 
 type (
@@ -50,10 +46,11 @@ type (
 
 	// 设备状态
 	DeviceStatus struct {
-		Timestamp time.Time `bson:"Timestamp"`
-		SN        string    `bson:"SN"`
-		Status    int       `bson:"Status"`
-		Host      string    `bson:"Host"`
+		Timestamp  time.Time `bson:"Timestamp"`
+		SN         string    `bson:"SN"`
+		DeviceType string    `bson:"DeviceType"`
+		Status     int       `bson:"Status"`
+		Host       string    `bson:"Host"`
 	}
 
 	// 线路状态
