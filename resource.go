@@ -2,32 +2,32 @@ package definition
 
 type (
 	Resources struct {
-		Mongodb  mongodb
-		RabbitMQ rabbitMQ
-		Redis    redis
-		Postgres postgres
-		AliSms   aliSms
-		AliDns   aliDns
-		AliVms   aliVms
+		Mongodb  Mongodb
+		RabbitMQ RabbitMQ
+		Redis    Redis
+		Postgres Postgres
+		AliSms   AliSms
+		AliDns   AliDns
+		AliVms   AliVms
 	}
 
-	mongodb struct {
+	Mongodb struct {
 		Address string
 		DbName  string
 	}
 
-	rabbitMQ struct {
+	RabbitMQ struct {
 		Address  string
 		UserName string
 		Password string
 	}
 
-	redis struct {
+	Redis struct {
 		Address  string
 		Password string
 	}
 
-	postgres struct {
+	Postgres struct {
 		Host     string
 		Port     int
 		User     string
@@ -35,18 +35,18 @@ type (
 		DbName   string
 	}
 
-	aliSms struct {
+	AliSms struct {
 		AccessKeyID     string
 		AccessKeySecret string
 		SignName        string
 	}
 
-	aliDns struct {
+	AliDns struct {
 		AccessKeyID     string
 		AccessKeySecret string
 	}
 
-	aliVms struct {
+	AliVms struct {
 		AccessKeyID     string
 		AccessKeySecret string
 	}
