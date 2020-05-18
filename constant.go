@@ -6,7 +6,9 @@ const (
 
 	ExistDomainRecordPattern = `[-a-zA-Z0-9.]+.[a-z]+`
 
-	ExistNumPattern = `[0-9]+`
+	ExistIntegerPattern = `[0-9]+`
+
+	ExistFloatPattern = `[0-9.]+`
 
 	ExistIpPattern = `(1\d\d|2[0-5][0-5]|[1-9]\d|[1-9]).((1\d\d|2[0-5][0-5]|[1-9]\d|\d).){2}(1\d\d|2[0-5][0-5]|[1-9]\d|\d)`
 
