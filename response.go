@@ -28,6 +28,7 @@ const (
 	DecodeFailed         = "DECODE_FAILED"
 	EmptyMsgBody         = "EMPTY_MSG_BODY"
 	DeviceOffline        = "DEVICE_OFFLINE"
+	DeviceOnline         = "DEVICE_ONLINE"
 	SendRequestFailed    = "SEND_REQUEST_FAILED"
 	DeviceResponseFailed = "DEVICE_RESPONSE_FAILED"
 	CreateXLSXFailed     = "CREATE_XLSX_FAILED"
