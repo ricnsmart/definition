@@ -17,9 +17,7 @@ type (
 	}
 
 	RabbitMQ struct {
-		Address  string
-		UserName string
-		Password string
+		Address string
 	}
 
 	Redis struct {
@@ -28,11 +26,7 @@ type (
 	}
 
 	Postgres struct {
-		Host     string
-		Port     int
-		User     string
-		Password string
-		DbName   string
+		Address string
 	}
 
 	AliSms struct {
