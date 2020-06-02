@@ -30,11 +30,11 @@ const (
 type (
 	// 向设备服务请求的格式
 	MetricRequest struct {
-		SN     string
-		Method uint8 `json:"method,string"`
-		Metric string
-		Value  string
-		LineNo uint8 `json:"line_no,string"`
+		SN      string
+		Method  uint8 `json:"method,string"`
+		Metrics string
+		Value   string
+		LineNo  uint8 `json:"line_no,string"`
 	}
 
 	// 设备服务对请求的响应
