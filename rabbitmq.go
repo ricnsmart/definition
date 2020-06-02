@@ -15,7 +15,7 @@ const (
 	LineStatusQueue                 = "line.status"                   // 线路状态
 	LineMetricDataQueue             = "line.metric.data"              // 线路各项指标数据
 
-	PushServiceFailed                    = "推送设备服务信息失败"
+	PushDeviceServiceFailed              = "推送设备服务信息失败"
 	PushDeviceStatusFailed               = "推送设备状态失败"
 	PushDeviceMetricDataFailed           = "推送设备指标数据失败"
 	PushDeviceMetricActionFailed         = "推送设备指标动作失败"
