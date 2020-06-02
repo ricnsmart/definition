@@ -4,41 +4,41 @@ import "time"
 
 const (
 	/*RabbitMQ Queue*/
-	ServiceQueue                     = "service"                        // 设备服务信息
-	DeviceStatusQueue                = "device.status"                  // 设备状态
-	DeviceMetricsDataQueue           = "device.metrics.data"            // 设备（网关）各项指标数据
-	DeviceMetricsActionQueue         = "device.metrics.action"          // 下发设备指标动作：读，写，遥控
-	DeviceMetricsActionResponseQueue = "device.metrics.action.response" // 下发设备指标动作后设备的响应
-	DeviceSettingDataQueue           = "device.setting.data"            // 设备基础配置
-	DeviceAlarmSettingQueue          = "device.alarm.setting"           // 设备警报配置
-	DeviceAlarmNotificationQueue     = "device.alarm.notifications"     // 设备、线路警报通知
-	LineStatusQueue                  = "line.status"                    // 线路状态
-	LineMetricsDataQueue             = "line.metrics.data"              // 线路各项指标数据
+	DeviceServiceQueue              = "device.service"                // 设备服务信息
+	DeviceStatusQueue               = "device.status"                 // 设备状态
+	DeviceMetricDataQueue           = "device.metric.data"            // 设备（网关）各项指标数据
+	DeviceMetricActionQueue         = "device.metric.action"          // 下发设备指标动作：读，写，遥控
+	DeviceMetricActionResponseQueue = "device.metric.action.response" // 下发设备指标动作后设备的响应
+	DeviceSettingDataQueue          = "device.setting.data"           // 设备基础配置
+	DeviceAlarmSettingQueue         = "device.alarm.setting"          // 设备警报配置
+	DeviceAlarmNotificationQueue    = "device.alarm.notification"     // 设备、线路警报通知
+	LineStatusQueue                 = "line.status"                   // 线路状态
+	LineMetricDataQueue             = "line.metric.data"              // 线路各项指标数据
 
-	PushServiceFailed                     = "推送设备服务信息失败"
-	PushDeviceStatusFailed                = "推送设备状态失败"
-	PushDeviceMetricsDataFailed           = "推送设备指标数据失败"
-	PushDeviceMetricsActionFailed         = "推送设备指标动作失败"
-	PushDeviceMetricsActionResponseFailed = "推送设备指标动作响应失败"
-	PushDeviceSettingDataFailed           = "推送设备基础配置失败"
-	PushDeviceAlarmSettingFailed          = "推送设备警报配置失败"
-	PushDeviceAlarmNotificationFailed     = "推送警报通知失败"
-	PushLineStatusFailed                  = "推送线路状态失败"
-	PushLineMetricsDataFailed             = "推送线路指标数据失败"
+	PushServiceFailed                    = "推送设备服务信息失败"
+	PushDeviceStatusFailed               = "推送设备状态失败"
+	PushDeviceMetricDataFailed           = "推送设备指标数据失败"
+	PushDeviceMetricActionFailed         = "推送设备指标动作失败"
+	PushDeviceMetricActionResponseFailed = "推送设备指标动作响应失败"
+	PushDeviceSettingDataFailed          = "推送设备基础配置失败"
+	PushDeviceAlarmSettingFailed         = "推送设备警报配置失败"
+	PushDeviceAlarmNotificationFailed    = "推送警报通知失败"
+	PushLineStatusFailed                 = "推送线路状态失败"
+	PushLineMetricDataFailed             = "推送线路指标数据失败"
 )
 
 type (
 	// 向设备服务请求的格式
-	MetricsRequest struct {
-		SN      string
-		Method  uint8 `json:"method,string"`
-		Metrics string
-		Value   string
-		LineNo  uint8 `json:"line_no,string"`
+	MetricRequest struct {
+		SN     string
+		Method uint8 `json:"method,string"`
+		Metric string
+		Value  string
+		LineNo uint8 `json:"line_no,string"`
 	}
 
 	// 设备服务对请求的响应
-	MetricsResponse struct {
+	MetricResponse struct {
 		Code    string
 		Message string
 		Data    string
