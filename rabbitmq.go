@@ -68,8 +68,8 @@ type (
 		Port        int       `json:"port" bson:"port"`
 		Host        string    `json:"host" bson:"host"`
 		Version     string    `json:"version" bson:"version"`
-		BuildTime   string    `json:"build_time" bson:"build_time"`   // 设备服务构建时间
-		StartupTime time.Time `json:"start_time" bson:"startup_time"` // 设备服务启动时间
+		BuildTime   string    `json:"build_time" bson:"build_time"`     // 设备服务构建时间
+		StartupTime time.Time `json:"startup_time" bson:"startup_time"` // 设备服务启动时间
 	}
 
 	// 设备警报详细信息
