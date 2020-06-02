@@ -5,6 +5,7 @@ const (
 	// 设备类型
 	RCNVJ   = "RCNVJ"
 	RCN350F = "RCN350F"
+	RCN210  = "RCN210"
 	PMC350  = "PMC350"
 	PMC350F = "PMC350F"
 	ASCP200 = "ASCP200"

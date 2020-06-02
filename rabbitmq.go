@@ -4,7 +4,7 @@ import "time"
 
 const (
 	/*RabbitMQ Queue*/
-	ComponentInfoQueue               = "component.info"                 // 设备网关组件信息
+	ServiceQueue                     = "service"                        // 设备服务信息
 	DeviceStatusQueue                = "device.status"                  // 设备状态
 	DeviceMetricsDataQueue           = "device.metrics.data"            // 设备（网关）各项指标数据
 	DeviceMetricsActionQueue         = "device.metrics.action"          // 下发设备指标动作：读，写，遥控
@@ -15,7 +15,7 @@ const (
 	LineStatusQueue                  = "line.status"                    // 线路状态
 	LineMetricsDataQueue             = "line.metrics.data"              // 线路各项指标数据
 
-	PushComponentInfoFailed               = "推送设备组件信息失败"
+	PushServiceFailed                     = "推送设备服务信息失败"
 	PushDeviceStatusFailed                = "推送设备状态失败"
 	PushDeviceMetricsDataFailed           = "推送设备指标数据失败"
 	PushDeviceMetricsActionFailed         = "推送设备指标动作失败"
@@ -28,16 +28,16 @@ const (
 )
 
 type (
-	// 向设备组件请求的格式
+	// 向设备服务请求的格式
 	MetricsRequest struct {
 		SN      string
-		Method  uint8 `json:"Method,string"`
+		Method  uint8 `json:"method,string"`
 		Metrics string
 		Value   string
-		LineNo  uint8 `json:"LineNo,string"`
+		LineNo  uint8 `json:"line_no,string"`
 	}
 
-	// 设备组件对请求的响应
+	// 设备服务对请求的响应
 	MetricsResponse struct {
 		Code    string
 		Message string
@@ -46,52 +46,52 @@ type (
 
 	// 设备状态
 	DeviceStatus struct {
-		Timestamp  time.Time `bson:"Timestamp"`
-		SN         string    `bson:"SN"`
-		DeviceType string    `bson:"DeviceType"`
-		Status     int       `bson:"Status"`
-		Host       string    `bson:"Host"`
+		ChangeTime time.Time `bson:"change_time"` // 状态变更时间
+		SN         string    `bson:"sn"`
+		DeviceType string    `bson:"device_type"`
+		Status     int       `bson:"status" `
+		Host       string    `bson:"host"`
 	}
 
 	// 线路状态
 	LineStatus struct {
-		Timestamp time.Time `bson:"Timestamp"`
-		SN        string    `bson:"SN"`
-		Status    int       `bson:"Status"`
-		LineNo    int       `json:"LineNo" bson:"LineNo"`
+		ChangeTime time.Time `bson:"change_time"`
+		SN         string    `bson:"sn"`
+		Status     int       `bson:"status"`
+		LineNo     int       `json:"line_no" bson:"line_no"`
 	}
 
-	// 组件信息
+	// 服务信息
 	// 为了防止port设置失误，导致端口冲突等问题，还是显式申明port
 	Component struct {
-		Timestamp time.Time `bson:"Timestamp"`
-		Name      string    `bson:"Name"`
-		Port      int       `bson:"Port"`
-		Host      string    `bson:"Host"`
-		Version   string    `bson:"Version"`
-		BuildTime string    `bson:"BuildTime"`
+		StartupTime time.Time `bson:"startup_time"` // 设备服务启动时间
+		Name        string    `bson:"name"`
+		Port        int       `bson:"port"`
+		Host        string    `bson:"host"`
+		Version     string    `bson:"version"`
+		BuildTime   string    `bson:"build_time"` // 设备服务构建时间
 	}
 
 	// 设备警报详细信息
 	DeviceAlarm struct {
-		Timestamp  time.Time `bson:"Timestamp"`
-		SN         string    `bson:"SN"`
-		Metric     string    `bson:"Metric"`
-		AlarmType  int       `bson:"AlarmType"`
-		DeviceType string    `bson:"DeviceType"`
-		Current    float64   `bson:"Current"`
-		SetValue   float64   `bson:"SetValue"`
+		SendTime   time.Time `bson:"send_time"` // 警报发出时间
+		SN         string    `bson:"sn"`
+		Metric     string    `bson:"metric"`
+		AlarmType  int       `bson:"alarm_type"`
+		DeviceType string    `bson:"device_type"`
+		Current    float64   `bson:"current"`
+		SetValue   float64   `bson:"set_value"`
 	}
 
 	// 线路警报详细信息
 	LineAlarm struct {
-		Timestamp  time.Time `bson:"Timestamp"`
-		SN         string    `bson:"SN"`
-		LineNo     int       `json:"LineNo" bson:"LineNo"`
-		Metric     string    `bson:"Metric"`
-		AlarmType  int       `bson:"AlarmType"`
-		DeviceType string    `bson:"DeviceType"`
-		Current    float64   `bson:"Current"`
-		SetValue   float64   `bson:"SetValue"`
+		SendTime   time.Time `bson:"send_time"` // 警报发出时间
+		SN         string    `bson:"sn"`
+		LineNo     int       `json:"line_no" bson:"line_no"`
+		Metric     string    `bson:"metric"`
+		AlarmType  int       `bson:"alarm_type"`
+		DeviceType string    `bson:"device_type"`
+		Current    float64   `bson:"current"`
+		SetValue   float64   `bson:"set_value"`
 	}
 )
